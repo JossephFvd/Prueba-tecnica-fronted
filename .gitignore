@@ -1,42 +1,46 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# Ignorar directorios generados por Angular CLI
+node_modules/
+dist/
 
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+# Ignorar archivos de configuración generados por Angular CLI
+.angular/
+.angular-cli.json
+.angular-cli/
+.angular-config.json
+karma.conf.js
+karma.conf.ts
+tsconfig.app.json
+tsconfig.spec.json
+tslint.json
 
-# Node
-/node_modules
-npm-debug.log
-yarn-error.log
+# Ignorar archivos de dependencias de desarrollo
+*.js.map
+*.d.ts
 
-# IDEs and editors
+# Ignorar archivos de generación del IDE
 .idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+.vscode/
 
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
+# Ignorar archivos de compilación de TypeScript
+*.js
+*.js.map
 
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
+# Ignorar archivos de compilación de SASS/SCSS
+*.css
+*.css.map
 
-# System files
-.DS_Store
-Thumbs.db
+# Ignorar archivos de registro
+*.log
+
+# Ignorar archivos temporales
+.tmp/
+*.tmp
+*.swp
+*.swo
+
+# Ignorar archivos de caché
+*.cache
+
+# Ignorar archivos de respaldo
+*~
+*.bak
