@@ -1,0 +1,17 @@
+<h2 class="search-results-title">Resultados de búsqueda para: {{ query }}</h2>
+
+<div class="search-results-container" *ngIf="searchResults.length > 0">
+  <ul class="search-results-list">
+    <li class="search-result" *ngFor="let result of searchResults">
+      <a [routerLink]="['/cocktail', result.idDrink]">
+      <div class="drink-image">
+        <img [src]="result.strDrinkThumb" alt="Cocktail Image" class="circular-image">
+      </div>
+      <p class="drink-name">{{ result.strDrink }}</p>
+    </a>
+    </li>
+  </ul>
+</div>
+<div class="no-results" *ngIf="searchResults.length === 0">
+  <p>No se encontraron resultados</p>
+</div>

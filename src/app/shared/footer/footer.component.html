@@ -1,0 +1,12 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="footer-title">Buscar cócteles por letra:</h4>
+        <ul class="letter-list">
+          <li *ngFor="let letter of letters" (click)="searchByLetter(letter)" class="letter-item">{{ letter }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
