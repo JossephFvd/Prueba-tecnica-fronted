@@ -48,7 +48,7 @@ export class CocktailDetailsComponent implements OnInit {
         if (ingredientImage) {
           const ingredientWithImage: Ingredient = {
             name: ingredientData.strIngredient,
-            measure: this.ingredients[index].measure, // Utilizar la medida del ingrediente original
+            measure: this.ingredients[index].measure, 
             imageUrl: ingredientImage
           };
           console.log('Ingredient with image:', ingredientWithImage);
