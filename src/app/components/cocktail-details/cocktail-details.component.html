@@ -10,7 +10,7 @@
     <h3>Ingredientes:</h3>
     <div class="cocktail-row">
       <div class="cocktail-item" *ngFor="let ingredient of ingredients; let i = index">
-        <a (click)="viewIngredientList(ingredient.name)">{{ ingredient.name }}</a>
+        <a (click)="viewIngredientList(ingredient.name)" style="text-decoration: underline; cursor: pointer;">{{ ingredient.name }}</a>
         <img *ngIf="ingredientImages[i]?.imageUrl" [src]="ingredientImages[i]?.imageUrl" alt="{{ ingredient.name }}">
       </div>
     </div>
