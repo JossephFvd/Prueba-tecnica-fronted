@@ -1,18 +1,27 @@
 <header>
-  <div class="logo">
-    <img routerLink="/cocktails" src="assets/img/Logo.png" alt="" style="cursor:pointer;">
-  </div>
-  <nav>
-    <ul>
-      <li><a href="#">Menu</a></li>
-      <li><a href="#">Rewards</a></li>
-      <li><a href="#">Blog</a></li>
-    </ul>
-  </nav>
-  <div class="search">
-    <input type="text" placeholder="Buscar cóctel" (keyup.enter)="searchCocktails($event)">
-  </div>
-  <div class="save-icon">
-   <img src="assets/img/bookmarks.png" alt="">
+  <div class="header-container">
+    <div class="left-section">
+      <div class="logo">
+        <img routerLink="/cocktails" src="assets/img/Logo.png" alt="" style="cursor:pointer;">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Rewards</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="right-section">
+      <div class="search">
+        <div class="search-input">
+          <img src="assets/img/search.png" alt="" class="search-icon">
+          <input type="text" placeholder="Search" (keyup.enter)="searchCocktails($event)">
+        </div>
+        <div class="save-icon">
+          <img src="assets/img/bookmarks.png" alt="">
+        </div>
+      </div>
+    </div>
   </div>
 </header>

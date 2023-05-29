@@ -1,6 +1,6 @@
 <div class="container">
 <div class="cocktail-list">
-  <h2>Populares Cócteles</h2>
+  <h2>Popular drinks</h2>
   <div class="cocktail-items">
     <div class="cocktail-item" *ngFor="let cocktail of popularCocktails">
       <div class="cocktail-item-inner">
@@ -15,17 +15,34 @@
   </div>
 </div>
 <br>
+
 <div class="cocktail-list">
-  <h2>Populares ingredientes</h2>
+  <h2>Latest drinks</h2>
   <div class="cocktail-items">
-    <div class="cocktail-item" *ngFor="let ingredient of popularIngredients">
+    <div class="cocktail-item" *ngFor="let cocktail of latestDrinks">
       <div class="cocktail-item-inner">
-        <!-- <a (click)="viewIngredientDetails(ingredient.name)" style="cursor:pointer"> -->
+        <a (click)="viewCocktailDetails(cocktail.idDrink)" style="cursor:pointer">
         <div class="cocktail-image">
-          <img [src]="ingredient.imageUrl" alt="{{ ingredient.name }}">
+          <img [src]="cocktail.strDrinkThumb" alt="{{ cocktail.strDrink }}">
         </div>
-        <h3>{{ ingredient.name }}</h3>
-      <!-- </a> -->
+        <h3>{{ cocktail.strDrink }}</h3>
+      </a>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="cocktail-list">
+  <h2>Random drinks</h2>
+  <div class="cocktail-items">
+    <div class="cocktail-item" *ngFor="let cocktail of randomDrinks">
+      <div class="cocktail-item-inner">
+        <a (click)="viewCocktailDetails(cocktail.idDrink)" style="cursor:pointer">
+        <div class="cocktail-image">
+          <img [src]="cocktail.strDrinkThumb" alt="{{ cocktail.strDrink }}">
+        </div>
+        <h3>{{ cocktail.strDrink }}</h3>
+      </a>
       </div>
     </div>
   </div>

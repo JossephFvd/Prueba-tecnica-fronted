@@ -15,4 +15,8 @@ export class FooterComponent {
     const query = `search-results;query=${letter}`;
     this.router.navigateByUrl(query);
   }
+
+  getLastIndex(): number {
+    return this.letters.length - 1;
+  }
 }

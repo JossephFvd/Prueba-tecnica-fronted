@@ -1,12 +1,14 @@
-<footer class="footer">
+<footer>
+  <hr>
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h4 class="footer-title">Buscar cócteles por letra:</h4>
-        <ul class="letter-list">
-          <li *ngFor="let letter of letters" (click)="searchByLetter(letter)" class="letter-item">{{ letter }}</li>
-        </ul>
-      </div>
+    <div class="footer-column">
+      <h4 class="footer-title">Browse By Name</h4>
+      <ul class="letter-list">
+        <ng-container *ngFor="let letter of letters; let lastIndex = last">
+          <li class="letter-item" (click)="searchByLetter(letter)">{{ letter }}</li>
+          <li class="separator" *ngIf="!lastIndex">/</li>
+        </ng-container>
+      </ul>
     </div>
   </div>
 </footer>

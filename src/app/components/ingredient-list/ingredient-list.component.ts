@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Cocktail } from 'src/app/models/cocktail.model';
 import { Ingredient } from 'src/app/models/ingredient.model';
 import { IngredientService } from 'src/app/services/ingredient.service';
@@ -16,7 +16,6 @@ export class IngredientListComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private ingredientService: IngredientService,
     private cocktailService: CocktailService
   ) {}

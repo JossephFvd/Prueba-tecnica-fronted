@@ -9,38 +9,45 @@ import { Router } from '@angular/router';
 })
 export class CocktailListComponent implements OnInit {
   popularCocktails: any[];
-  popularIngredients: any[];
+  latestDrinks: any[];
+  randomDrinks: any[];
+
+  private apiUrl = 'https://www.thecocktaildb.com/api/json/v2/9973533/';
 
   constructor(private http: HttpClient, private router: Router) {}
 
+
   ngOnInit(): void {
     this.fetchPopularCocktails();
-    this.fetchPopularIngredients();
+    this.fetchLatestDrinks();
+    this.fetchRandomDrinks();
   }
 
   fetchPopularCocktails(): void {
-    const apiKey = '9973533';
-    const url = `https://www.thecocktaildb.com/api/json/v2/${apiKey}/popular.php`;
+    const url = `${this.apiUrl}popular.php`;
 
     this.http.get<any>(url).subscribe(data => {
       this.popularCocktails = data.drinks.slice(0, 8);
     });
   }
 
-  fetchPopularIngredients(): void {
-    const apiKey = '9973533';
-    const url = `https://www.thecocktaildb.com/api/json/v2/${apiKey}/popular.php`;
+  fetchLatestDrinks(): void {
+    const url = `${this.apiUrl}latest.php`;
 
     this.http.get<any>(url).subscribe(data => {
-      this.popularIngredients = data.ingredients.slice(0, 4);
+      this.latestDrinks = data.drinks.slice(0, 8);
+    });
+  }
+
+  fetchRandomDrinks(): void {
+    const url = `${this.apiUrl}randomselection.php`;
+
+    this.http.get<any>(url).subscribe(data => {
+      this.randomDrinks = data.drinks.slice(0, 8);
     });
   }
 
   viewCocktailDetails(cocktailId: string): void {
     this.router.navigate(['/cocktail', cocktailId]);
   }
-
-  // viewIngredientDetails(name: string): void {
-  //   this.router.navigate(['/cocktail', name);
-  // }
 }

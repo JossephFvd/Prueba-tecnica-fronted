@@ -24,7 +24,7 @@ export class SearchResultsComponent implements OnInit {
   }
 
   searchCocktails(query: string) {
-    const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${query}`;
+    const url = `https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=${query}`;
     this.httpClient.get<any>(url).subscribe(data => {
       if (data && data.drinks) {
         // Filtrar los cocktails por la primera letra si se ingresa solo una letra

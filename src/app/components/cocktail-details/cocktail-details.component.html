@@ -2,7 +2,8 @@
   <div class="container">
     <div class="ingredient-column">
       <h2>{{ cocktail?.strDrink }}</h2>
-    <img [src]="cocktail?.strDrinkThumb" alt="{{ cocktail?.strDrink }}">
+    <img [src]="cocktail?.strDrinkThumb" alt="{{ cocktail?.strDrink }}" class="circular-image">
+    <h3>Instructions</h3>
     <p>{{cocktail?.strInstructions}}
     </p>
     </div>
@@ -10,8 +11,8 @@
     <h3>Ingredientes:</h3>
     <div class="cocktail-row">
       <div class="cocktail-item" *ngFor="let ingredient of ingredients; let i = index">
-        <a (click)="viewIngredientList(ingredient.name)" style="text-decoration: underline; cursor: pointer;">{{ ingredient.name }}</a>
-        <img *ngIf="ingredientImages[i]?.imageUrl" [src]="ingredientImages[i]?.imageUrl" alt="{{ ingredient.name }}">
+        <a (click)="viewIngredientList(ingredient.name)" style="text-decoration: underline; cursor: pointer;">{{ ingredient.name }}
+        <img src="assets/img/Rum.png" alt="{{ ingredient.name }}" class="circular-image"></a>
       </div>
     </div>
   </div>
